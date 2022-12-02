@@ -1,0 +1,15 @@
+C:\Users\school\Documents\advent-of-code-2022\day-1\bin\Debug\net6.0\day-1.exe
+C:\Users\school\Documents\advent-of-code-2022\day-1\bin\Debug\net6.0\day-1.deps.json
+C:\Users\school\Documents\advent-of-code-2022\day-1\bin\Debug\net6.0\day-1.runtimeconfig.json
+C:\Users\school\Documents\advent-of-code-2022\day-1\bin\Debug\net6.0\day-1.dll
+C:\Users\school\Documents\advent-of-code-2022\day-1\bin\Debug\net6.0\day-1.pdb
+C:\Users\school\Documents\advent-of-code-2022\day-1\obj\Debug\net6.0\day-1.csproj.AssemblyReference.cache
+C:\Users\school\Documents\advent-of-code-2022\day-1\obj\Debug\net6.0\day-1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\school\Documents\advent-of-code-2022\day-1\obj\Debug\net6.0\day-1.AssemblyInfoInputs.cache
+C:\Users\school\Documents\advent-of-code-2022\day-1\obj\Debug\net6.0\day-1.AssemblyInfo.cs
+C:\Users\school\Documents\advent-of-code-2022\day-1\obj\Debug\net6.0\day-1.csproj.CoreCompileInputs.cache
+C:\Users\school\Documents\advent-of-code-2022\day-1\obj\Debug\net6.0\day-1.dll
+C:\Users\school\Documents\advent-of-code-2022\day-1\obj\Debug\net6.0\refint\day-1.dll
+C:\Users\school\Documents\advent-of-code-2022\day-1\obj\Debug\net6.0\day-1.pdb
+C:\Users\school\Documents\advent-of-code-2022\day-1\obj\Debug\net6.0\day-1.genruntimeconfig.cache
+C:\Users\school\Documents\advent-of-code-2022\day-1\obj\Debug\net6.0\ref\day-1.dll
