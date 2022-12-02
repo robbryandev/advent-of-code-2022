@@ -4,6 +4,12 @@ key = {
   },
   "you": {
     "X": "Rock","Y": "Paper", "Z": "Scissors"
+  },
+  "lose": {
+    "Rock": "Scissors", "Paper": "Rock", "Scissors": "Paper"
+  },
+  "win": {
+    "Rock": "Paper", "Paper": "Scissors", "Scissors": "Rock"
   }
 }
 
@@ -22,24 +28,23 @@ points = {
 
 def checkWin(other: str, you: str) -> tuple[int, int]:
   otherVal = key["other"][other]
-  youVal = key["you"][you]
-  win = (points["base"][youVal], points["end"]["Win"])
-  lose = (points["base"][youVal], points["end"]["Lose"])
-  draw = (points["base"][youVal], points["end"]["Draw"])
-  if otherVal == youVal:
+  win = (points["base"][you], points["end"]["Win"])
+  lose = (points["base"][you], points["end"]["Lose"])
+  draw = (points["base"][you], points["end"]["Draw"])
+  if otherVal == you:
     return draw
   if otherVal == "Rock":
-    if youVal == "Paper":
+    if you == "Paper":
       return win
     else:
       return lose
   elif otherVal == "Paper":
-    if youVal == "Scissors":
+    if you == "Scissors":
       return win
     else:
       return lose
   elif otherVal == "Scissors":
-    if youVal == "Rock":
+    if you == "Rock":
       return win
     else:
       return lose
@@ -47,12 +52,22 @@ def checkWin(other: str, you: str) -> tuple[int, int]:
 def getPoints(state: tuple[int, int]) -> int:
   return state[0] + state[1]
 
+def getValue(other: str, you: str) -> str:
+  otherVal = key["other"][other]
+  if you == "X":
+    return key["lose"][otherVal]
+  if you == "Y":
+    return otherVal
+  if you == "Z":
+    return key["win"][otherVal]
+    
+
 input = open("./data/input.txt", "r").read()
 inputList = input.split("\n")
 
 total = 0
 for i in inputList:
   vals = i.split(" ")
-  total += getPoints(checkWin(other=vals[0], you=vals[1]))
+  total += getPoints(checkWin(other=vals[0], you=getValue(other=vals[0], you=vals[1])))
 
 print(total)
