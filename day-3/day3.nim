@@ -32,18 +32,31 @@ proc getNumMap(u, l: seq[NumMap], c: char): NumMap =
 
 let input = readFile("./data/input.txt").splitLines(false)
 
-proc half(val: string): seq[string] =
-  let halfOne: string = val[0 .. (val.len() / 2 - 1).toInt()]
-  let halfTwo: string = val[(val.len() / 2).toInt() .. val.len() - 1]
-  result = @[halfOne, halfTwo]
+proc findCommon(valOne, valTwo, valThree: string): char =
+  for l in valOne:
+    if l in valTwo and l in valThree:
+      return l
+  for l in valTwo:
+    if l in valOne and l in valThree:
+      return l
+  for l in valThree:
+    if l in valTwo and l in valOne:
+      return l
 
+proc splitThrees(inputVal: seq[string]): seq[seq[string]] =
+  var sackCount = 0
+  var group: seq[string]
+  for i in inputVal:
+    sackCount.inc(1)
+    group.add(i)
+    if sackCount == 3:
+      result.add(group)
+      group = @[]
+      sackCount = 0
 
 var total = 0
-for i in input:
-  let sack = i.half()
-  for i in countup(0, sack[0].len() - 1):
-    if sack[0][i] in sack[1]:
-      total.inc(getNumMap(upper, lower, sack[0][i]).val)
-      break
+for g in input.splitThrees():
+  let common = findCommon(g[0], g[1], g[2])
+  total.inc(getNumMap(upper, lower, common).val)
 
 echo total
